@@ -5,10 +5,13 @@
     /// </summary>
     public class Equip
     {
+        
+
         /// <summary>
         /// Идентификатор
         /// </summary>
-        public int Id { get; set; }
+        //public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Серийный номер
@@ -27,7 +30,7 @@
 
         public override string ToString()
         {
-            return $"{Id} {Serial} {Type} {Model}";
+            return $"{Id}  |  {Serial}  |  {Type}  |  {Model}"; //в Id теперь GUID
         }
     }
     

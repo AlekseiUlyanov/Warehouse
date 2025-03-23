@@ -15,12 +15,26 @@ namespace UI_WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Equip equip = new ();
-            equip.Serial = textBox1.Text;
-            equip.Type = textBox2.Text;
-            equip.Model = textBox3.Text;
-            data.Add(equip);
-            UpdateListBox();
+            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty)
+            {
+                MessageBox.Show(
+                "Необходимо заполнить все поля",
+                "Ошибка при добавлении оборудования",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly);
+            }
+
+            else
+            {
+                Equip equip = new();
+                equip.Serial = textBox1.Text;
+                equip.Type = textBox2.Text;
+                equip.Model = textBox3.Text;
+                data.Add(equip);
+                UpdateListBox();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,6 +56,12 @@ namespace UI_WinForms
         {
 
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 
 }

@@ -12,7 +12,7 @@ namespace UI_WinForms.Data
 
         public void Add(Equip equip)
         {
-            //TODO: генерация идентификатора
+            equip.Id = Guid.NewGuid();
             dataSource.Add(equip);
         }
 
