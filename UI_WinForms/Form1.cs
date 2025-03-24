@@ -1,4 +1,4 @@
-using System.Windows.Forms;
+using UI_WinForms.Business;
 using UI_WinForms.Data;
 
 namespace UI_WinForms
@@ -7,10 +7,13 @@ namespace UI_WinForms
     {
         private readonly IDataLayer data;
 
+        private readonly IBusinessLayer equipManager;
+
         public Form1()
         {
             InitializeComponent();
             data = new DataLayerInMemory();
+            equipManager = new BusinessLayerEquipManager();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +32,7 @@ namespace UI_WinForms
             else
             {
                 Equip equip = new();
+                equipManager.GenerateId(equip);
                 equip.Serial = textBox1.Text;
                 equip.Type = textBox2.Text;
                 equip.Model = textBox3.Text;

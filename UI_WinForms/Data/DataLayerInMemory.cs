@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UI_WinForms.Data
+﻿namespace UI_WinForms.Data
 {
     public class DataLayerInMemory : IDataLayer
     {
@@ -12,7 +6,7 @@ namespace UI_WinForms.Data
 
         public void Add(Equip equip)
         {
-            equip.Id = Guid.NewGuid();
+            //equip.Id = Guid.NewGuid();
             dataSource.Add(equip);
         }
 
