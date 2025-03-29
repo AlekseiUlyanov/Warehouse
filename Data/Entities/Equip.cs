@@ -1,4 +1,4 @@
-﻿namespace UI.WinForms.Data
+﻿namespace Data.Entities
 {
     /// <summary>
     /// Оборудование

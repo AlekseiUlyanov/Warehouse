@@ -1,13 +1,12 @@
-﻿namespace UI.WinForms.Data
-{
-    public class DataLayerInMemory : IDataLayer
-    {
-        private readonly List<Equip> dataSource = new();
+﻿using Data.Entities;
 
+namespace Data.SQL
+{
+    class DataLayerSQL : IDataLayer
+    {
         public void Add(Equip equip)
         {
-            //equip.Id = Guid.NewGuid();
-            dataSource.Add(equip);
+            throw new NotImplementedException();
         }
 
         public Equip Find(int Id)
@@ -17,8 +16,7 @@
 
         public IEnumerable<Equip> GetAll()
         {
-            foreach (var d in dataSource)
-                yield return d; //изучить
+            throw new NotImplementedException();
         }
 
         public void Remove(int Id)

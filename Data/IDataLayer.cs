@@ -1,6 +1,8 @@
-﻿namespace UI.WinForms.Data
+﻿using Data.Entities;
+
+namespace Data
 {
-    interface IDataLayer
+    public interface IDataLayer
     {
         void Add(Equip equip);
         void Remove(int Id);
