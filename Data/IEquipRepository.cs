@@ -2,11 +2,11 @@
 
 namespace Data
 {
-    public interface IDataLayer
+    public interface IEquipRepository
     {
         void Add(Equip equip);
-        void Remove(int Id);
-        Equip Find(int Id);
+        void Remove(int id);
+        Equip Find(int id);
         IEnumerable<Equip> GetAll();
     }
 }

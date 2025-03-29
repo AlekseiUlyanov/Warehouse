@@ -16,12 +16,10 @@ namespace UnitTests
         public void BusinessExceptionTest()
         {
             // Arrange
-            var mock = new Mock<IDataLayer>();
-
+            var mock = new Mock<IEquipRepository>();
 
             IEquipService equipService = new EquipService(mock.Object);
             EquipDto equipDto = new();
-
 
             // Assert
             Assert.Throws<ApplicationException>(

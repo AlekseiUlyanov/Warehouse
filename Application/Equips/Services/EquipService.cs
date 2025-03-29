@@ -6,11 +6,11 @@ namespace Application.Equips.Services
 {
     public class EquipService : IEquipService
     {
-        private readonly IDataLayer _dataLayer;
+        private readonly IEquipRepository _equipRepository;
 
-        public EquipService(IDataLayer dataLayer)
+        public EquipService(IEquipRepository equipRepository)
         {
-            _dataLayer = dataLayer;
+            _equipRepository = equipRepository;
         }
 
         public void Create(EquipDto equipDto)
@@ -30,12 +30,12 @@ namespace Application.Equips.Services
                 Model = equipDto.Model
             };
 
-            _dataLayer.Add(equip);
+            _equipRepository.Add(equip);
         }
 
         public IEnumerable<EquipDto> GetAll()
         {
-            foreach (var equip in _dataLayer.GetAll())
+            foreach (var equip in _equipRepository.GetAll())
             {
                 EquipDto equipDto = new()
                 {

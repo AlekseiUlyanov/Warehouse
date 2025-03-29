@@ -18,9 +18,9 @@ namespace UI.WinForms
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            IDataLayer dataLayer = new DataLayerInMemory();
+            IEquipRepository equipRepository = new EquipRepository();
 
-            IEquipService equipService = new EquipService(dataLayer);
+            IEquipService equipService = new EquipService(equipRepository);
 
             WinFormsApp.Run(new Main(equipService));
         }

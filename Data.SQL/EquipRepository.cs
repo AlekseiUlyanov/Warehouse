@@ -2,14 +2,14 @@
 
 namespace Data.SQL
 {
-    class DataLayerSQL : IDataLayer
+    public class EquipRepository : IEquipRepository
     {
         public void Add(Equip equip)
         {
             throw new NotImplementedException();
         }
 
-        public Equip Find(int Id)
+        public Equip Find(int id)
         {
             throw new NotImplementedException();
         }
@@ -19,7 +19,7 @@ namespace Data.SQL
             throw new NotImplementedException();
         }
 
-        public void Remove(int Id)
+        public void Remove(int id)
         {
             throw new NotImplementedException();
         }

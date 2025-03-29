@@ -2,28 +2,28 @@
 
 namespace Data.InMemory
 {
-    public class DataLayerInMemory : IDataLayer
+    public class EquipRepository : IEquipRepository
     {
-        private readonly List<Equip> dataSource = new();
+        private readonly List<Equip> _dataSource = new();
 
         public void Add(Equip equip)
         {
             //equip.Id = Guid.NewGuid();
-            dataSource.Add(equip);
+            _dataSource.Add(equip);
         }
 
-        public Equip Find(int Id)
+        public Equip Find(int id)
         {
             throw new NotImplementedException();
         }
 
         public IEnumerable<Equip> GetAll()
         {
-            foreach (var d in dataSource)
-                yield return d; //изучить
+            foreach (var equip in _dataSource)
+                yield return equip; //изучить
         }
 
-        public void Remove(int Id)
+        public void Remove(int id)
         {
             throw new NotImplementedException();
         }
