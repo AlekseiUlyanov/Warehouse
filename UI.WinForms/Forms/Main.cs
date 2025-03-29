@@ -1,19 +1,16 @@
-using UI.WinForms.Business;
-using UI.WinForms.Data;
+using Application.Equip.Services;
 
 namespace UI.WinForms.Forms
 {
     public partial class Main : Form
     {
-        private readonly IDataLayer data;
+        private readonly IEquipService _equipService;
 
-        private readonly IBusinessLayer equipManager;
-
-        public Main()
+        public Main(IEquipService equipService)
         {
+            _equipService = equipService;
+
             InitializeComponent();
-            data = new DataLayerInMemory();
-            equipManager = new BusinessLayerEquipManager();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,13 +28,6 @@ namespace UI.WinForms.Forms
 
             else
             {
-                Equip equip = new();
-                equipManager.GenerateId(equip);
-                equip.Serial = textBox1.Text;
-                equip.Type = textBox2.Text;
-                equip.Model = textBox3.Text;
-                data.Add(equip);
-                UpdateListBox();
             }
         }
 
@@ -51,8 +41,8 @@ namespace UI.WinForms.Forms
             if (listBox1.Items.Count != 0)
                 listBox1.Items.Clear();
 
-            foreach (var d in data.GetAll())
-                listBox1.Items.Add(d);
+            //foreach (var d in data.GetAll())
+              //  listBox1.Items.Add(d);
 
         }
 
