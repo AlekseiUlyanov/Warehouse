@@ -1,4 +1,5 @@
-using Application.Equip.Services;
+using Application.Equips.Dto;
+using Application.Equips.Services;
 
 namespace UI.WinForms.Forms
 {
@@ -15,19 +16,32 @@ namespace UI.WinForms.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty)
+            try
             {
-                MessageBox.Show(
-                "Необходимо заполнить все поля",
+                EquipDto equipDto = new()
+                {
+                    Serial = tbSerial.Text.Trim(),
+                    Type = tbType.Text.Trim(),
+                    Model = tbModel.Text.Trim()
+                };
+
+                _equipService.Create(equipDto);
+
+                UpdateListBox();
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message,
                 "Ошибка при добавлении оборудования",
                 MessageBoxButtons.OK,
-                MessageBoxIcon.Error,
-                MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
+                MessageBoxIcon.Information);
             }
-
-            else
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message,
+                "Ошибка при добавлении оборудования",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             }
         }
 
@@ -41,8 +55,8 @@ namespace UI.WinForms.Forms
             if (listBox1.Items.Count != 0)
                 listBox1.Items.Clear();
 
-            //foreach (var d in data.GetAll())
-              //  listBox1.Items.Add(d);
+            foreach (var d in _equipService.GetAll())
+                listBox1.Items.Add(d);
 
         }
 

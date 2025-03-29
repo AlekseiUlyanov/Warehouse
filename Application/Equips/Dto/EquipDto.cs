@@ -1,9 +1,6 @@
-﻿namespace Data.Entities
+﻿namespace Application.Equips.Dto
 {
-    /// <summary>
-    /// Оборудование
-    /// </summary>
-    public class Equip
+    public class EquipDto
     {
         /// <summary>
         /// Идентификатор
@@ -25,6 +22,10 @@
         /// Модель 
         /// </summary>
         public string Model { get; set; }
-    }
 
+        public override string ToString()
+        {
+            return $"{Id}  |  {Serial}  |  {Type}  |  {Model}"; //в Id теперь GUID
+        }
+    }
 }

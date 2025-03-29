@@ -30,9 +30,9 @@
         {
             button1 = new Button();
             listBox1 = new ListBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            tbSerial = new TextBox();
+            tbType = new TextBox();
+            tbModel = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -59,24 +59,24 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(62, 172);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(614, 23);
-            textBox1.TabIndex = 2;
+            tbSerial.Location = new Point(62, 172);
+            tbSerial.Name = "textBox1";
+            tbSerial.Size = new Size(614, 23);
+            tbSerial.TabIndex = 2;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(62, 201);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(614, 23);
-            textBox2.TabIndex = 3;
+            tbType.Location = new Point(62, 201);
+            tbType.Name = "textBox2";
+            tbType.Size = new Size(614, 23);
+            tbType.TabIndex = 3;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(62, 230);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(614, 23);
-            textBox3.TabIndex = 3;
+            tbModel.Location = new Point(62, 230);
+            tbModel.Name = "textBox3";
+            tbModel.Size = new Size(614, 23);
+            tbModel.TabIndex = 3;
             // 
             // label1
             // 
@@ -116,9 +116,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbModel);
+            Controls.Add(tbType);
+            Controls.Add(tbSerial);
             Controls.Add(listBox1);
             Controls.Add(button1);
             Name = "Form1";
@@ -132,9 +132,9 @@
 
         private Button button1;
         private ListBox listBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox tbSerial;
+        private TextBox tbType;
+        private TextBox tbModel;
         private Label label1;
         private Label label2;
         private Label label3;

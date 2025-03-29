@@ -1,4 +1,4 @@
-using Application.Equip.Services;
+using Application.Equips.Services;
 using Data;
 using Data.InMemory;
 using UI.WinForms.Forms;
