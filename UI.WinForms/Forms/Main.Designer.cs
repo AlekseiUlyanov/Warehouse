@@ -1,6 +1,6 @@
-﻿namespace UI_WinForms
+﻿namespace UI.WinForms.Forms
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.

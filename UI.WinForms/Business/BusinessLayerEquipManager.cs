@@ -1,6 +1,6 @@
-﻿using UI_WinForms.Data;
+﻿using UI.WinForms.Data;
 
-namespace UI_WinForms.Business
+namespace UI.WinForms.Business
 {
     class BusinessLayerEquipManager : IBusinessLayer
     {

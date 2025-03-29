@@ -1,4 +1,4 @@
-﻿namespace UI_WinForms.Data
+﻿namespace UI.WinForms.Data
 {
     interface IDataLayer
     {

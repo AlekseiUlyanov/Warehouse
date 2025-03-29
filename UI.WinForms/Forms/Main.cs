@@ -1,15 +1,15 @@
-using UI_WinForms.Business;
-using UI_WinForms.Data;
+using UI.WinForms.Business;
+using UI.WinForms.Data;
 
-namespace UI_WinForms
+namespace UI.WinForms.Forms
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         private readonly IDataLayer data;
 
         private readonly IBusinessLayer equipManager;
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             data = new DataLayerInMemory();
